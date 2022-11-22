@@ -21,7 +21,7 @@ import { auth, firestore, storage } from "../../firebase/clientApp";
 import { Community, communityState } from "../../atoms/communitiesAtom";
 import moment from "moment";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { FaReddit } from "react-icons/fa";
+import { IoInformationCircle } from "react-icons/io5";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { doc, updateDoc } from "firebase/firestore";
 
@@ -102,9 +102,8 @@ const About: React.FC<AboutProps> = ({
         borderRadius="4px 4px 0px 0px"
       >
         <Text fontSize="10pt" fontWeight={700}>
-          About Community
+          About Study Group
         </Text>
-        <Icon as={HiOutlineDotsHorizontal} cursor="pointer" />
       </Flex>
       <Flex direction="column" p={3} bg="white" borderRadius="0px 0px 4px 4px">
         {loading ? (
@@ -117,32 +116,13 @@ const About: React.FC<AboutProps> = ({
           </Stack>
         ) : (
           <>
-            {user?.uid === communityData?.creatorId && (
-              <Box
-                bg="gray.100"
-                width="100%"
-                p={2}
-                borderRadius={4}
-                border="1px solid"
-                borderColor="gray.300"
-                cursor="pointer"
-              >
-                <Text fontSize="9pt" fontWeight={700} color="blue.500">
-                  Add description
-                </Text>
-              </Box>
-            )}
             <Stack spacing={2}>
               <Flex width="100%" p={2} fontWeight={600} fontSize="10pt">
-                <Flex direction="column" flexGrow={1}>
+                <Flex direction="column">
                   <Text>
                     {communityData?.numberOfMembers?.toLocaleString()}
                   </Text>
-                  <Text>Members</Text>
-                </Flex>
-                <Flex direction="column" flexGrow={1}>
-                  <Text>1</Text>
-                  <Text>Online</Text>
+                  <Text>Member(s)</Text>
                 </Flex>
               </Flex>
               <Divider />
@@ -194,7 +174,7 @@ const About: React.FC<AboutProps> = ({
                         />
                       ) : (
                         <Icon
-                          as={FaReddit}
+                          as={IoInformationCircle}
                           fontSize={40}
                           color="brand.100"
                           mr={2}

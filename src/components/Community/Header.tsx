@@ -4,6 +4,7 @@ import { FaReddit } from "react-icons/fa";
 import { Community, communityState } from "../../atoms/communitiesAtom";
 import useCommunityData from "../../hooks/useCommunityData";
 import { useSetRecoilState } from "recoil";
+import { IoInformationCircle } from "react-icons/io5";
 
 type HeaderProps = {
   communityData: Community;
@@ -31,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ communityData }) => {
               borderRadius="full"
               boxSize="66px"
               src={communityStateValue.currentCommunity.imageURL}
-              alt="Dan Abramov"
+              alt=""
               position="relative"
               top={-3}
               color="blue.500"
@@ -39,12 +40,12 @@ const Header: React.FC<HeaderProps> = ({ communityData }) => {
             />
           ) : (
             <Icon
-              as={FaReddit}
-              fontSize={64}
+              as={IoInformationCircle}
+              fontSize={70}
               position="relative"
-              top={-3}
+              top={0}
               color="blue.500"
-              border="4px solid white"
+              border="2px solid white"
               borderRadius="50%"
             />
           )}

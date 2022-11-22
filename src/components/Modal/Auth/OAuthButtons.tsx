@@ -19,7 +19,6 @@ const OAuthButtons: React.FC<OAuthButtonsProps> = () => {
         <Image src="/images/googlelogo.png" height="20px" mr={4} />
         Continue with Google
       </Button>
-      <Button variant="oauth">Some Other Provider</Button>
       {error && (
         <Text textAlign="center" fontSize="10pt" color="red" mt={2}>
           {error}

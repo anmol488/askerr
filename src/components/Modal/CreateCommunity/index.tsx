@@ -54,7 +54,7 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
 
     if (format.test(name) || name.length < 3) {
       return setNameError(
-        "Community names must be between 3–21 characters, and can only contain letters, numbers, or underscores."
+        "Community names must be between 3–21 characters, and can only contain letters & numbers."
       );
     }
 
@@ -114,7 +114,7 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
         fontSize={15}
         padding={3}
       >
-        Create a community
+        Create a study group
       </ModalHeader>
       <Box pr={3} pl={3}>
         <Divider />
@@ -124,7 +124,7 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
             Name
           </Text>
           <Text fontSize={11} color="gray.500">
-            Community names including capitalization cannot be changed
+            Study group names including capitalization cannot be changed
           </Text>
           <Text
             color="gray.400"
@@ -133,14 +133,14 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
             left="10px"
             width="20px"
           >
-            r/
+            a/ 
           </Text>
           <Input
             position="relative"
             name="name"
             value={name}
             onChange={handleChange}
-            pl="22px"
+            pl="25px"
             type={""}
             size="sm"
           />
@@ -154,62 +154,6 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
           <Text fontSize="9pt" color="red" pt={1}>
             {nameError}
           </Text>
-          <Box mt={4} mb={4}>
-            <Text fontWeight={600} fontSize={15}>
-              Community Type
-            </Text>
-            <Stack spacing={2} pt={1}>
-              <Checkbox
-                colorScheme="blue"
-                name="public"
-                isChecked={communityType === "public"}
-                onChange={onCommunityTypeChange}
-              >
-                <Flex alignItems="center">
-                  <Icon as={BsFillPersonFill} mr={2} color="gray.500" />
-                  <Text fontSize="10pt" mr={1}>
-                    Public
-                  </Text>
-                  <Text fontSize="8pt" color="gray.500" pt={1}>
-                    Anyone can view, post, and comment to this community
-                  </Text>
-                </Flex>
-              </Checkbox>
-              <Checkbox
-                colorScheme="blue"
-                name="restricted"
-                isChecked={communityType === "restricted"}
-                onChange={onCommunityTypeChange}
-              >
-                <Flex alignItems="center">
-                  <Icon as={BsFillEyeFill} color="gray.500" mr={2} />
-                  <Text fontSize="10pt" mr={1}>
-                    Restricted
-                  </Text>
-                  <Text fontSize="8pt" color="gray.500" pt={1}>
-                    Anyone can view this community, but only approved users can
-                    post
-                  </Text>
-                </Flex>
-              </Checkbox>
-              <Checkbox
-                colorScheme="blue"
-                name="private"
-                isChecked={communityType === "private"}
-                onChange={onCommunityTypeChange}
-              >
-                <Flex alignItems="center">
-                  <Icon as={HiLockClosed} color="gray.500" mr={2} />
-                  <Text fontSize="10pt" mr={1}>
-                    Private
-                  </Text>
-                  <Text fontSize="8pt" color="gray.500" pt={1}>
-                    Only approved users can view and submit to this community
-                  </Text>
-                </Flex>
-              </Checkbox>
-            </Stack>
-          </Box>
         </ModalBody>
       </Box>
       <ModalFooter bg="gray.100" borderRadius="0px 0px 10px 10px">
@@ -222,7 +166,7 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
           onClick={handleCreateCommunity}
           isLoading={loading}
         >
-          Create Community
+          Create Study Group
         </Button>
       </ModalFooter>
     </ModalWrapper>

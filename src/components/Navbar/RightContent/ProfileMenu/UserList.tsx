@@ -23,17 +23,6 @@ const UserList: React.FC<UserListProps> = () => {
         fontSize="10pt"
         fontWeight={700}
         _hover={{ bg: "blue.500", color: "white" }}
-      >
-        <Flex alignItems="center">
-          <Icon fontSize={20} mr={2} as={CgProfile} />
-          Profile
-        </Flex>
-      </MenuItem>
-      <MenuDivider />
-      <MenuItem
-        fontSize="10pt"
-        fontWeight={700}
-        _hover={{ bg: "blue.500", color: "white" }}
         onClick={logout}
       >
         <Flex alignItems="center">

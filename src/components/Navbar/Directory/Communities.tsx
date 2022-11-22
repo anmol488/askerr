@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, Flex, Icon, MenuItem, Text } from "@chakra-ui/react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { FaReddit } from "react-icons/fa";
+import { IoInformationCircle } from "react-icons/io5";
 import { GrAdd } from "react-icons/gr";
 import { useRecoilValue } from "recoil";
 import { communityState } from "../../../atoms/communitiesAtom";
@@ -31,7 +31,7 @@ const Communities: React.FC<CommunitiesProps> = ({ menuOpen }) => {
       {mySnippets.find((item) => item.isModerator) && (
         <Box mt={3} mb={4}>
           <Text pl={3} mb={1} fontSize="7pt" fontWeight={500} color="gray.500">
-            MODERATING
+            ADMIN
           </Text>
           {mySnippets
             .filter((item) => item.isModerator)
@@ -40,7 +40,7 @@ const Communities: React.FC<CommunitiesProps> = ({ menuOpen }) => {
                 key={snippet.communityId}
                 displayText={`r/${snippet.communityId}`}
                 link={`/r/${snippet.communityId}`}
-                icon={FaReddit}
+                icon={IoInformationCircle}
                 iconColor="brand.100"
               />
             ))}
@@ -64,7 +64,7 @@ const Communities: React.FC<CommunitiesProps> = ({ menuOpen }) => {
         {mySnippets.map((snippet) => (
           <MenuListItem
             key={snippet.communityId}
-            icon={FaReddit}
+            icon={IoInformationCircle}
             displayText={`r/${snippet.communityId}`}
             link={`/r/${snippet.communityId}`}
             iconColor="blue.500"

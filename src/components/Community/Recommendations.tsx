@@ -12,7 +12,7 @@ import {
 import { collection, getDocs, limit, orderBy, query } from "firebase/firestore";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { FaReddit } from "react-icons/fa";
+import { IoInformationCircle } from "react-icons/io5";
 import { Community } from "../../atoms/communitiesAtom";
 import { firestore } from "../../firebase/clientApp";
 import useCommunityData from "../../hooks/useCommunityData";
@@ -54,8 +54,8 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
     <Flex
       direction="column"
       bg="white"
-      borderRadius={4}
       cursor="pointer"
+      borderRadius={4}
       border="1px solid"
       borderColor="gray.300"
     >
@@ -70,9 +70,9 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
         bgImage="url(/images/recCommsArt.png)"
         backgroundSize="cover"
         bgGradient="linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)),
-        url('images/recCommsArt.png')"
+        url('images/image_rec.jpeg')"
       >
-        Top Communities
+        Top Study Groups
       </Flex>
       <Flex direction="column">
         {loading ? (
@@ -107,7 +107,7 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
                     p="10px 12px"
                     fontWeight={600}
                   >
-                    <Flex width="80%" align="center">
+                    <Flex width="70%" align="center">
                       <Flex width="15%">
                         <Text mr={2}>{index + 1}</Text>
                       </Flex>
@@ -121,7 +121,7 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
                           />
                         ) : (
                           <Icon
-                            as={FaReddit}
+                            as={IoInformationCircle}
                             fontSize={30}
                             color="brand.100"
                             mr={2}
@@ -136,7 +136,7 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
                         >{`r/${item.id}`}</span>
                       </Flex>
                     </Flex>
-                    <Box position="absolute" right="10px">
+                    <Box position="absolute" right="5px">
                       <Button
                         height="22px"
                         fontSize="8pt"
@@ -153,11 +153,6 @@ const Recommendations: React.FC<RecommendationsProps> = () => {
                 </Link>
               );
             })}
-            <Box p="10px 20px">
-              <Button height="30px" width="100%">
-                View All
-              </Button>
-            </Box>
           </>
         )}
       </Flex>

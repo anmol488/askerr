@@ -44,14 +44,14 @@ const Login: React.FC<LoginProps> = ({ toggleView }) => {
     <form onSubmit={onSubmit}>
       <InputItem
         name="email"
-        placeholder="email"
+        placeholder="Email"
         type="text"
         mb={2}
         onChange={onChange}
       />
       <InputItem
         name="password"
-        placeholder="password"
+        placeholder="Password"
         type="password"
         onChange={onChange}
       />
@@ -75,11 +75,12 @@ const Login: React.FC<LoginProps> = ({ toggleView }) => {
         </Text>
         <Text
           fontSize="9pt"
+          fontWeight={700}
           color="blue.500"
           cursor="pointer"
           onClick={() => toggleView("resetPassword")}
         >
-          Reset
+          RESET
         </Text>
       </Flex>
       <Flex fontSize="9pt" justifyContent="center">

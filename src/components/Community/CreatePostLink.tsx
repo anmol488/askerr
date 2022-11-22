@@ -1,10 +1,7 @@
 import { Flex, Icon, Input } from "@chakra-ui/react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { BsLink45Deg } from "react-icons/bs";
-import { FaReddit } from "react-icons/fa";
-import { IoImageOutline } from "react-icons/io5";
+import { MdOutlinePostAdd } from "react-icons/md";
 import useDirectory from "../../hooks/useDirectory";
 
 type CreatePostProps = {};
@@ -34,9 +31,9 @@ const CreatePostLink: React.FC<CreatePostProps> = () => {
       p={2}
       mb={4}
     >
-      <Icon as={FaReddit} fontSize={36} color="gray.300" mr={4} />
+      <Icon as={MdOutlinePostAdd} fontSize={36} color="gray.300" mr={4} />
       <Input
-        placeholder="Create Post"
+        placeholder="Have a question? Ask 'em here!"
         fontSize="10pt"
         _placeholder={{ color: "gray.500" }}
         _hover={{
@@ -57,14 +54,6 @@ const CreatePostLink: React.FC<CreatePostProps> = () => {
         mr={4}
         onClick={onClick}
       />
-      <Icon
-        as={IoImageOutline}
-        fontSize={24}
-        mr={4}
-        color="gray.400"
-        cursor="pointer"
-      />
-      <Icon as={BsLink45Deg} fontSize={24} color="gray.400" cursor="pointer" />
     </Flex>
   );
 };

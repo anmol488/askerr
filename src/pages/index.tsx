@@ -12,7 +12,6 @@ import {
   where,
 } from "firebase/firestore";
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRecoilValue } from "recoil";
 import { communityState } from "../atoms/communitiesAtom";
@@ -24,8 +23,6 @@ import PostLoader from "../components/Post/Loader";
 import PostItem from "../components/Post/PostItem";
 import { auth, firestore } from "../firebase/clientApp";
 import usePosts from "../hooks/usePosts";
-import Premium from "../components/Community/Premium";
-import PersonalHome from "../components/Community/PersonalHome";
 
 const Home: NextPage = () => {
   const [user, loadingUser] = useAuthState(auth);
@@ -226,8 +223,6 @@ const Home: NextPage = () => {
       </>
       <Stack spacing={5} position="sticky" top="14px">
         <Recommendations />
-        <Premium />
-        <PersonalHome />
       </Stack>
     </PageContentLayout>
   );

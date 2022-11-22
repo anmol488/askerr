@@ -48,21 +48,21 @@ const SignUp: React.FC<SignUpProps> = ({ toggleView }) => {
     <form onSubmit={onSubmit}>
       <InputItem
         name="email"
-        placeholder="email"
+        placeholder="Email"
         type="text"
         mb={2}
         onChange={onChange}
       />
       <InputItem
         name="password"
-        placeholder="password"
+        placeholder="Password"
         type="password"
         mb={2}
         onChange={onChange}
       />
       <InputItem
         name="confirmPassword"
-        placeholder="confirm password"
+        placeholder="Confirm Password"
         type="password"
         onChange={onChange}
       />

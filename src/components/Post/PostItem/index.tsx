@@ -187,26 +187,6 @@ const PostItem: React.FC<PostItemContentProps> = ({
             <Icon as={BsChat} mr={2} />
             <Text fontSize="9pt">{post.numberOfComments}</Text>
           </Flex>
-          <Flex
-            align="center"
-            p="8px 10px"
-            borderRadius={4}
-            _hover={{ bg: "gray.200" }}
-            cursor="pointer"
-          >
-            <Icon as={IoArrowRedoOutline} mr={2} />
-            <Text fontSize="9pt">Share</Text>
-          </Flex>
-          <Flex
-            align="center"
-            p="8px 10px"
-            borderRadius={4}
-            _hover={{ bg: "gray.200" }}
-            cursor="pointer"
-          >
-            <Icon as={IoBookmarkOutline} mr={2} />
-            <Text fontSize="9pt">Save</Text>
-          </Flex>
           {userIsCreator && (
             <Flex
               align="center"

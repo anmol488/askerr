@@ -18,10 +18,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { useRouter } from "next/router";
-import { BiPoll } from "react-icons/bi";
-import { BsLink45Deg, BsMic } from "react-icons/bs";
 import { IoDocumentText, IoImageOutline } from "react-icons/io5";
-import { AiFillCloseCircle } from "react-icons/ai";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { firestore, storage } from "../../../firebase/clientApp";
 import TabItem from "./TabItem";
@@ -38,18 +35,6 @@ const formTabs = [
   {
     title: "Images & Video",
     icon: IoImageOutline,
-  },
-  {
-    title: "Link",
-    icon: BsLink45Deg,
-  },
-  {
-    title: "Poll",
-    icon: BiPoll,
-  },
-  {
-    title: "Talk",
-    icon: BsMic,
   },
 ];
 
