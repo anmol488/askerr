@@ -38,7 +38,7 @@ const Communities: React.FC<CommunitiesProps> = ({ menuOpen }) => {
             .map((snippet) => (
               <MenuListItem
                 key={snippet.communityId}
-                displayText={`r/${snippet.communityId}`}
+                displayText={`a/${snippet.communityId}`}
                 link={`/a/${snippet.communityId}`}
                 icon={IoInformationCircle}
                 iconColor="brand.100"
@@ -48,7 +48,7 @@ const Communities: React.FC<CommunitiesProps> = ({ menuOpen }) => {
       )}
       <Box mt={3} mb={4}>
         <Text pl={3} mb={1} fontSize="7pt" fontWeight={500} color="gray.500">
-          MY COMMUNITIES
+          MY STUDY GROUPS
         </Text>
         <MenuItem
           width="100%"
@@ -58,7 +58,7 @@ const Communities: React.FC<CommunitiesProps> = ({ menuOpen }) => {
         >
           <Flex alignItems="center">
             <Icon fontSize={20} mr={2} as={GrAdd} />
-            Create Community
+            Create Study Group
           </Flex>
         </MenuItem>
         {mySnippets.map((snippet) => (
@@ -66,7 +66,7 @@ const Communities: React.FC<CommunitiesProps> = ({ menuOpen }) => {
             key={snippet.communityId}
             icon={IoInformationCircle}
             displayText={`a/${snippet.communityId}`}
-            link={`/r/${snippet.communityId}`}
+            link={`/a/${snippet.communityId}`}
             iconColor="blue.500"
             imageURL={snippet.imageURL}
           />

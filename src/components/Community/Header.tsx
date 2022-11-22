@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ communityData }) => {
                 {communityData.id}
               </Text>
               <Text fontWeight={600} fontSize="10pt" color="gray.400">
-                r/{communityData.id}
+                a/{communityData.id}
               </Text>
             </Flex>
             <Flex>
