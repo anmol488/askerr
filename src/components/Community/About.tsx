@@ -12,7 +12,6 @@ import {
   Image,
   Spinner,
 } from "@chakra-ui/react";
-import { HiOutlineDotsHorizontal } from "react-icons/hi";
 import { RiCakeLine } from "react-icons/ri";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -144,7 +143,7 @@ const About: React.FC<AboutProps> = ({
                 )}
               </Flex>
               {!onCreatePage && (
-                <Link href={`/r/${router.query.community}/submit`}>
+                <Link href={`/a/${router.query.community}/submit`}>
                   <Button mt={3} height="30px">
                     Create Post
                   </Button>

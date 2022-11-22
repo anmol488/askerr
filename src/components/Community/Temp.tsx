@@ -2,9 +2,7 @@ import { Flex, Icon, Input } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { BsLink45Deg } from "react-icons/bs";
-import { FaReddit } from "react-icons/fa";
-import { IoImageOutline } from "react-icons/io5";
+import { IoInformationCircle } from "react-icons/io5";
 import { useSetRecoilState } from "recoil";
 import { authModalState } from "../../atoms/authModalAtom";
 import { auth } from "../../firebase/clientApp";
@@ -20,7 +18,7 @@ const CreatePostLink: React.FC = () => {
       return;
     }
     const { communityId } = router.query;
-    router.push(`/r/${communityId}/submit`);
+    router.push(`/a/${communityId}/submit`);
   };
 
   return (
@@ -35,7 +33,7 @@ const CreatePostLink: React.FC = () => {
       p={2}
       mb={4}
     >
-      <Icon as={FaReddit} fontSize={36} color="gray.300" mr={4} />
+      <Icon as={IoInformationCircle} fontSize={36} color="gray.300" mr={4} />
       <Input
         placeholder="Create Post"
         fontSize="10pt"
@@ -58,14 +56,6 @@ const CreatePostLink: React.FC = () => {
         mr={4}
         onClick={onClick}
       />
-      <Icon
-        as={IoImageOutline}
-        fontSize={24}
-        mr={4}
-        color="gray.400"
-        cursor="pointer"
-      />
-      <Icon as={BsLink45Deg} fontSize={24} color="gray.400" cursor="pointer" />
     </Flex>
   );
 };

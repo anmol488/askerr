@@ -65,7 +65,7 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
       await runTransaction(firestore, async (transaction) => {
         const communityDoc = await transaction.get(communityDocRef);
         if (communityDoc.exists()) {
-          throw new Error(`Sorry, /r${name} is taken. Try another.`);
+          throw new Error(`Sorry, /a${name} is taken. Try another.`);
         }
 
         transaction.set(communityDocRef, {
@@ -92,7 +92,7 @@ const CreateCommunityModal: React.FC<CreateCommunityModalProps> = ({
       mySnippets: [],
     }));
     handleClose();
-    router.push(`r/${name}`);
+    router.push(`a/${name}`);
     setLoading(false);
   };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { MenuItem, Flex, Icon, Text, Box } from "@chakra-ui/react";
-import { FaReddit } from "react-icons/fa";
+import { IoInformationCircle } from "react-icons/io5";
 import { GrAdd } from "react-icons/gr";
 import MenuListItem from "./MenuListItem";
 import { CommunitySnippet } from "../../../atoms/communitiesAtom";
@@ -14,7 +14,7 @@ const MyCommunities: React.FC<MyCommunitiesProps> = ({ snippets, setOpen }) => {
   return (
     <Box mt={3} mb={3}>
       <Text pl={3} mb={1} fontSize="7pt" fontWeight={500} color="gray.500">
-        MY COMMUNITIES
+        MY STUDY GROUPS
       </Text>
       <MenuItem
         width="100%"
@@ -24,15 +24,15 @@ const MyCommunities: React.FC<MyCommunitiesProps> = ({ snippets, setOpen }) => {
       >
         <Flex alignItems="center">
           <Icon fontSize={20} mr={2} as={GrAdd} />
-          Create Community
+          Create Study Group
         </Flex>
       </MenuItem>
       {snippets.map((snippet) => (
         <MenuListItem
           key={snippet.communityId}
-          displayText={`r/${snippet.communityId}`}
-          link={`r/${snippet.communityId}`}
-          icon={FaReddit}
+          displayText={`a/${snippet.communityId}`}
+          link={`a/${snippet.communityId}`}
+          icon={IoInformationCircle}
           iconColor="blue.500"
         />
       ))}
